@@ -6,58 +6,51 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:37:11 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/03 16:40:50 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:23:53 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <iostream>
 
 int main() {
-	try {
-		// Test du constructeur par défaut
-		Bureaucrat defaultBureaucrat;
-		std::cout << defaultBureaucrat << std::endl;
-
-		// Test du constructeur personnalisé
-		Bureaucrat customBureaucrat("Alice", 1);
-		std::cout << customBureaucrat << std::endl;
-
-		// Test de la fonction decrementGrade()
-		std::cout << "Decrementing grade of Alice by 1:" << std::endl;
-		customBureaucrat.decrementGrade(1);
-		std::cout << customBureaucrat << std::endl;
-		
-		// Test de la fonction incrementGrade()
-		std::cout << "Incrementing grade of Alice by 1:" << std::endl;
-		customBureaucrat.incrementGrade(1);
-		std::cout << customBureaucrat << std::endl;
-
-
-		// Test d'une exception GradeTooHighException
-		std::cout << "Testing GradeTooHighException:" << std::endl;
-		Bureaucrat highBureaucrat("Bob", 0); // Devrait lever une exception
-		std::cout << highBureaucrat << std::endl;
-	} 
-	catch (const Bureaucrat::GradeTooHighException &e) {
-		std::cerr << e.what() << std::endl;
-	} 
-	catch (const Bureaucrat::GradeTooLowException &e) {
-		std::cerr << e.what() << std::endl;
-	}
 
 	try {
-		// Test d'une exception GradeTooLowException
-		std::cout << "Testing GradeTooLowException:" << std::endl;
-		Bureaucrat lowBureaucrat("Charlie", 160); // Devrait lever une exception
-		std::cout << lowBureaucrat << std::endl;
-	} 
-	catch (const Bureaucrat::GradeTooHighException &e) {
-		std::cerr << e.what() << std::endl;
-	} 
-	catch (const Bureaucrat::GradeTooLowException &e) {
-		std::cerr << e.what() << std::endl;
-	}
+			{
+				Bureaucrat default_b;
+				std::cout << default_b << std::endl;
+			}
 
+			{
+				Bureaucrat b("Mark", 3);
+				std::cout << b << std::endl;
+				b.incrementGrade(2);
+				std::cout << b << std::endl;
+				b.decrementGrade(1);
+				std::cout << b << std::endl;
+			}
+			
+			{
+				Bureaucrat b("Eve", 150);
+				std::cout << b << std::endl;
+				// b.decrementGrade(5);
+				// std::cout << b << std::endl;
+			}
+			
+			{
+				Bureaucrat b("Toto", 1);
+				std::cout << b << std::endl;
+				// b.incrementGrade(1);
+				// std::cout << b << std::endl;
+			}
+			
+			{
+				Bureaucrat b("Cheater", -42);
+				std::cout << b << std::endl;
+			}
+			
+	}
+	catch (std::exception &e) {	
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }
