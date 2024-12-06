@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:37:05 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/05 17:14:49 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:45:47 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,13 @@ void Bureaucrat::decrementGrade(int value) {
 }
 
 void	Bureaucrat::signForm(Form &f){
-	f.beSigned(*this);
-	if (f.getIsSigned() == true)
+	try {
+		f.beSigned(*this);
 		std::cout << BOLD_ON BLUE << this->getName() << BOLD_OFF << " signed " << BOLD_ON YELLOW << f.getName() << BOLD_OFF << std::endl;
-	else
+	}
+	catch (std::exception &e) {
 		std::cout << BOLD_ON BLUE << this->getName() << BOLD_OFF << " couldn't sign " << BOLD_ON YELLOW << f.getName() << BOLD_OFF << " because grade is too low!" << std::endl;
+	}
 }
 
 /*********************************************************************************************************/
