@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:44:06 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/06 14:39:10 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/06 15:27:10 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,3 @@ void Form::beSigned(const Bureaucrat &b) {
 	else
 	 	throw GradeTooLowException();
 }
-
