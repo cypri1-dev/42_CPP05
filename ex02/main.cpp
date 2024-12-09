@@ -6,11 +6,10 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:32:20 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/09 16:05:01 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:32:26 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -19,27 +18,33 @@
 int main (void) {
 
 	try {
-		Bureaucrat b("Brakis", 1);
-		// PresidentialPardonForm p("Toto");
-		// RobotomyRequestForm r("Warrox");
-		ShrubberyCreationForm s("Robin");
 
-		std::cout << b << std::endl;
-		// std::cout << p << std::endl;
-		std::cout << s << std::endl;
+		// TEST WITH WRONG VALUE
+		// Bureaucrat cheater("cheater", -42);
 
-
-		b.signForm(s);
-		s.execute(b);
+		// PRESIDENTIAL PARDON FORM : S[25] | EX[5]
+		// ROBOTOMY REQUEST FORM : S[72] | EX[45]
+		// SHRUBBERY CREATION FORM : S[145] | EX[137]
 		
-		// ShrubberyCreationForm s("Toto");
-		// std::cout << s << std::endl;
+		Bureaucrat brakis("Brakis", 1);
+		Bureaucrat ama("Ama", 44);
+		Bureaucrat titi("titi", 148);
 
-		// RobotomyRequestForm r("Brakis");
-		// std::cout << r << std::endl;
+		PresidentialPardonForm p("Toto");
+		RobotomyRequestForm r("Warrox");
+		ShrubberyCreationForm s("Robin");
+		
+		// VALID TEST SIGN + EXEC
+		ama.signForm(s);
+		brakis.executeForm(s);
 
-		// PresidentialPardonForm p("Cousto");
-		// std::cout << p << std::endl;
+		// TEST NOT SIGNED + EXEC OK
+		// titi.signForm(p);
+		// brakis.executeForm(p);
+
+		// TEST SIGNED + NO EXEC
+		// ama.signForm(r);
+		// titi.executeForm(r);
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
