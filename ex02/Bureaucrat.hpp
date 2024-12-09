@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:37:08 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/06 15:25:30 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:10:37 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ public:
 	void decrementGrade(int value);
 
 	void signForm(AForm &f);
+	void executeForm(AForm const &form);
 
 	class GradeTooHighException: public std::exception {
 		public:

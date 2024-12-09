@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:37:05 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/06 15:25:14 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:27:07 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "colors.hpp"
 
 #include "AForm.hpp"
+#include <exception>
 
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(1) {
@@ -84,15 +85,26 @@ void Bureaucrat::decrementGrade(int value) {
 	}	
 }
 
-void	Bureaucrat::signForm(AForm &f){
+void Bureaucrat::signForm(AForm &f){
 	try {
 		f.beSigned(*this);
 		std::cout << BOLD_ON BLUE << this->getName() << BOLD_OFF << " signed " << BOLD_ON YELLOW << f.getName() << BOLD_OFF << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << BOLD_ON BLUE << this->getName() << BOLD_OFF << " couldn't sign " << BOLD_ON YELLOW << f.getName() << BOLD_OFF << " because grade is too low!" << std::endl;
+		std::cout << BOLD_ON BLUE << this->getName() << BOLD_OFF << e.what() << std::endl;
 	}
 }
+
+void Bureaucrat::executeForm(AForm const &form) {
+	try {
+		form.execute(*this);
+		std::cout << BOLD_ON BLUE << this->getName() << BOLD_OFF << " executed " << BOLD_ON YELLOW << form.getName() << BOLD_OFF << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << BOLD_ON BLUE << this->getName() << BOLD_OFF << e.what() << std::endl;
+	}
+}
+
 
 /*********************************************************************************************************/
 
