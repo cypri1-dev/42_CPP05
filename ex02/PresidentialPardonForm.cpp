@@ -6,11 +6,12 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 14:56:10 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/09 15:11:24 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:25:22 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+#include "AForm.hpp"
 #include "colors.hpp"
 #include <exception>
 
@@ -53,8 +54,10 @@ std::ostream &operator<<(std::ostream &out, const PresidentialPardonForm &s) {
 /*********************************************************************************************************/
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor)const {
-	if (this->getIsSigned() && executor.getGrade() <= this->getGradeToExecute())
+	if (this->getIsSigned() == false)
+		throw NotSignedException();
+	else if (executor.getGrade() <= this->getGradeToExecute())
 		std::cout <<BOLD_ON << this->getTarget() << BOLD_OFF << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	else
+	else 
 		throw GradeTooLowException();
 }

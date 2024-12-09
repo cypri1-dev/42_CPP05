@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 14:56:20 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/09 16:05:43 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:04:14 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ std::ostream &operator<<(std::ostream &out, const ShrubberyCreationForm &s) {
 /*********************************************************************************************************/
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor)const {
-	if (this->getIsSigned() && executor.getGrade() <= this->getGradeToExecute()) {
+	if (this->getIsSigned() == false)
+		throw NotSignedException();
+	else if (executor.getGrade() <= this->getGradeToExecute()) {
 		std::string file_name = this->getTarget() + "_shrubbery";
 		if (file_name.size() == 0) {
 			file_name = "default_shrubbery";

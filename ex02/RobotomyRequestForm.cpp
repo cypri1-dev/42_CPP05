@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 14:56:14 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/09 15:19:59 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:03:08 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,11 @@ std::ostream &operator<<(std::ostream &out, const RobotomyRequestForm &s) {
 /*********************************************************************************************************/
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor)const {
-	if (this->getIsSigned() && executor.getGrade() <= this->getGradeToExecute())
+	if (this->getIsSigned() == false) {
+		std::cout << BOLD_ON << "BRRRRRRRRRR! the robotomy failed!" << BOLD_OFF <<std::endl;
+		throw NotSignedException();
+	}
+	else if (executor.getGrade() <= this->getGradeToExecute())
 		std::cout << "BRRRRRRRRRR! "<< BOLD_ON << this->getTarget() << BOLD_OFF << " has been robotomized successfully half of the time!" << std::endl;
 	else {
 		std::cout << BOLD_ON << "BRRRRRRRRRR! the robotomy failed!" << BOLD_OFF <<std::endl;
