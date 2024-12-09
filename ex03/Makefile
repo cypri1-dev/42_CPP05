@@ -6,7 +6,7 @@
 #    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/28 15:37:13 by cyferrei          #+#    #+#              #
-#    Updated: 2024/12/09 17:39:20 by cyferrei         ###   ########.fr        #
+#    Updated: 2024/12/09 23:09:46 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = FinalBureaucratyForm
 RM = rm -rf
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
-SRC = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
+SRC = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
