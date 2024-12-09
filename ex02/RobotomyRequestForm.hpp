@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 14:56:17 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/06 16:52:53 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 14:55:40 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class RobotomyRequestForm : public AForm {
 		~RobotomyRequestForm();
 
 		const std::string &getTarget()const;
+
+		void execute(Bureaucrat const &executor)const;
 };
 
 std::ostream &operator<<(std::ostream &out, const RobotomyRequestForm &s);
