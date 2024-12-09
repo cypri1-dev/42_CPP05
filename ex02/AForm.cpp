@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 14:56:04 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/06 16:44:48 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:59:52 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,10 @@ const char *AForm::GradeTooHighException::what()const throw() {
 
 const char *AForm::GradeTooLowException::what()const throw() {
 	return ("\033[1m\033[34mAForm 📄 grade too low!\033[0m\n");
+}
+
+const char *AForm::NotSignedException::what()const throw() {
+	return ("\033[1m\033[34mAForm 📄 is not signed!\033[0m\n");
 }
 
 /*********************************************************************************************************/
