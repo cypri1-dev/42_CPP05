@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:32:20 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/09 17:32:26 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 23:13:40 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main (void) {
 
@@ -45,6 +46,14 @@ int main (void) {
 		// TEST SIGNED + NO EXEC
 		// ama.signForm(r);
 		// titi.executeForm(r);
+
+		//TEST INTERN
+		Intern random_intern;
+		AForm* rrf;
+		
+		rrf = random_intern.makeForm("shrubbery creation", "Bender");
+
+		delete rrf;
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
