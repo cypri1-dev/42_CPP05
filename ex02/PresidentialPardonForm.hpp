@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 14:56:12 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/06 16:53:16 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/09 14:55:28 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class PresidentialPardonForm : public AForm {
 		~PresidentialPardonForm();
 
 		const std::string &getTarget()const;
+
+		void execute(Bureaucrat const &executor)const;
+
 };
 
 std::ostream &operator<<(std::ostream &out, const PresidentialPardonForm &s);
