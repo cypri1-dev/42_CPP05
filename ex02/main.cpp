@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 15:32:20 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/09 17:32:26 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:34:15 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 int main (void) {
 
 	try {
-
 		// TEST WITH WRONG VALUE
 		// Bureaucrat cheater("cheater", -42);
 

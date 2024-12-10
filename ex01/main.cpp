@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 16:43:27 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/06 14:47:05 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:33:27 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int main (void) {
 
 			{
 				Bureaucrat b("Ana", 1);
-				Form f("Taxes", 2, 12);
 				Bureaucrat c("Anabelle", 3);
+				Form f("Taxes", 2, 12);
 				f.beSigned(b);
 				c.signForm(f);
 				std::cout << b << std::endl;

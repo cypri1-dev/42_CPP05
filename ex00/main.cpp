@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:37:11 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/05 15:23:53 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:26:48 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int main() {
 			}
 			
 			{
-				Bureaucrat b("Cheater", -42);
-				std::cout << b << std::endl;
+				// Bureaucrat b("Cheater", -42);
+				// std::cout << b << std::endl;
 			}
 			
 	}

@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:37:05 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/05 15:19:17 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/10 13:24:21 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,7 @@ void Bureaucrat::decrementGrade(int value) {
 /*********************************************************************************************************/
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b) {
-	out << BOLD_ON GREEN <<"[NAME]: " << BOLD_OFF << b.getName() << std::endl;
-	out << BOLD_ON GREEN << "[GRADE]: " << BOLD_OFF <<b.getGrade() << std::endl;
+	out << BOLD_ON BLUE << b.getName() << BOLD_OFF << ", bureaucrat grade " << BOLD_ON RED << b.getGrade() << BOLD_OFF << "." << std::endl;
 	
 	return out;
 }
